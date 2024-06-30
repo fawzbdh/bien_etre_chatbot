@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Bien-être</title>
+</head>
+<body>
+    <!-- Intégration du widget de messagerie Dialogflow -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="chatbot"
+      agent-id="882d92d7-b3d3-47a9-a973-b0b11c068ee5"
+      language-code="fr"
+    ></df-messenger>
+
+    <script>
+        // Configuration du proxy pour les requêtes Dialogflow
+        const dfMessenger = document.querySelector('df-messenger');
+        dfMessenger.addEventListener('df-event-ready', function (event) {
+            dfMessenger.renderCustomText('Bienvenue dans le chatbot bien-être !');
+        });
+    </script>
+</body>
+</html>
